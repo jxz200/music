@@ -1,0 +1,75 @@
+@font-face {
+  font-family: "iconfont"; /* Project id 2872548 */
+  src: url('iconfont.woff2?t=1657095694115') format('woff2'),
+       url('iconfont.woff?t=1657095694115') format('woff'),
+       url('iconfont.ttf?t=1657095694115') format('truetype');
+}
+
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 16px;
+  font-style: normal;
+  
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.icon-icon--yes:before {
+  content: "\e61e";
+  color: rgb(56 189 248);
+}
+
+.icon-icon--shanchu:before {
+  content: "\e621";
+  color: rgb(56 189 248);
+}
+
+.icon-shezhi:before {
+  content: "\e68f";
+  color: rgb(56 189 248);
+}
+
+.icon-shuanglieliebiao:before {
+  content: "\e6e5";
+  /* --tw-text-opacity: 1;
+  color: rgb(96 165 250 / var(--tw-text-opacity)); */
+}
+
+.icon-dingdan1:before {
+  content: "\e60e";
+  color: rgb(56 189 248);
+}
+
+.icon-shujutongji:before {
+  content: "\e601";
+  color: rgb(56 189 248);
+}
+
+.icon-shangpin:before {
+  content: "\e888";
+  color: rgb(56 189 248);
+}
+
+.icon-quanxianyuechi:before {
+  content: "\e8a3";
+  color: rgb(56 189 248);
+}
+
+.icon-shujukanban:before {
+  content: "\eb66";
+  color: rgb(56 189 248);
+}
+
+.icon-shangcheng1:before {
+  content: "\e67c";
+}
+
+.icon-yonghu:before {
+  content: "\e8c8";
+  color: rgb(56 189 248);
+}
+
+.icon-mima:before {
+  content: "\e8b2";
+  color: rgb(56 189 248);
+}
+
