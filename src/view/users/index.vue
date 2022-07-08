@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { ref } from 'vue';
-import Button from '../../components/button.vue';
+import XButton from '../../components/XButton.vue';
 import { getUserList, deleteUser, changeUserState } from '../../http/users';
 import addUserDialog from './addUserDialog.vue';
 import assignRolesDialogVue from './assignRolesDialog.vue';
@@ -52,7 +52,7 @@ const handleDelete = async (row: any) => {
       <el-input v-model="query" placeholder="请输入用户名来搜索" class="w-80 h-10" clearable>
         <template #append> <button @click="updateUserList">搜索</button> </template>
       </el-input>
-      <Button class="bg-blue-400 hover:bg-blue-600" @click="handleAddUser">新增用户</Button>
+      <XButton class="bg-blue-400 hover:bg-blue-600" @click="handleAddUser">新增用户</XButton>
     </div>
     <el-table :data="tableData" border stripe class="mb-4">
       <el-table-column prop="id" label="ID"> </el-table-column>
@@ -67,9 +67,9 @@ const handleDelete = async (row: any) => {
       </el-table-column>
       <el-table-column prop="mg_state" label="选项" min-width="200">
         <template #default="scope">
-          <Button class="bg-red-400 hover:bg-red-600 mr-4" @click="handleDelete(scope.row)" v-permission="{ route, permission: '删除用户' }">删除</Button>
-          <Button class="bg-blue-400 hover:bg-blue-600" @click="handleAssignRoles(scope.row)" v-permission="{ route, permission: '分配用户角色' }"
-            >分配角色</Button
+          <XButton class="bg-red-400 hover:bg-red-600 mr-4" @click="handleDelete(scope.row)" v-permission="{ route, permission: '删除用户' }">删除</XButton>
+          <XButton class="bg-blue-400 hover:bg-blue-600" @click="handleAssignRoles(scope.row)" v-permission="{ route, permission: '分配用户角色' }"
+            >分配角色</XButton
           >
         </template>
       </el-table-column>

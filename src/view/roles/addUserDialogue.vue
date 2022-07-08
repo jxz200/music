@@ -32,8 +32,8 @@ defineExpose({ showDialogue });
       </el-form-item>
     </el-form>
     <div class="flex justify-center">
-      <Button class="bg-gray-400 mr-4" @click="hideDialogue">取 消</Button>
-      <Button class="bg-blue-400" @click="submit">确 定</Button>
+      <XButton class="bg-gray-400 mr-4" @click="hideDialogue">取 消</XButton>
+      <XButton class="bg-blue-400" @click="submit">确 定</XButton>
     </div>
   </el-dialog>
 </template>

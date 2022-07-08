@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { ref } from 'vue';
-import Button from '../../components/button.vue';
+import XButton from '../../components/XButton.vue';
 import { getRolesList } from '../../http/roles';
 import { assignRoles } from '../../http/users';
 import { IUserList } from '../../types/users';
@@ -49,8 +49,8 @@ defineExpose({ showDialogue });
     </div>
 
     <div class="flex justify-center">
-      <Button class="bg-gray-400 mr-4" @click="hideDialogue">取 消</Button>
-      <Button class="bg-blue-400" @click="submit">确 定</Button>
+      <XButton class="bg-gray-400 mr-4" @click="hideDialogue">取 消</XButton>
+      <XButton class="bg-blue-400" @click="submit">确 定</XButton>
     </div>
   </el-dialog>
 </template>

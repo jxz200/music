@@ -13,7 +13,7 @@
         <h1 class="tracking-wider font-semibold absolute left-12">后台管理系统</h1>
       </div>
 
-      <Button class="bg-gray-400 hover:bg-gray-600" @click="logout">退出</Button>
+      <XButton class="bg-gray-400 hover:bg-gray-600" @click="logout">退出</XButton>
     </header>
     <div class="w-screen grid grid-cols-[180px_1fr]">
       <aside>
@@ -53,7 +53,7 @@ import { getMenus } from '../http/api';
 import { useRouter, useRoute } from 'vue-router';
 import { ElMessage } from 'element-plus';
 import { ArrowRight } from '@element-plus/icons-vue';
-import Button from '../components/button.vue';
+import XButton from '../components/XButton.vue';
 // import
 
 const router = useRouter();

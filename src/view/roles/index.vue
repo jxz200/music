@@ -3,7 +3,7 @@ import { ref, onMounted } from 'vue';
 import { getRolesList } from '../../http/api';
 import { deleteRoles } from '../../http/roles';
 import useList from '../../hooks/list';
-import Button from '../../components/button.vue';
+import XButton from '../../components/XButton.vue';
 import DistributeDialogue from './distributeDialogue.vue';
 import addUserDialogue from './addUserDialogue.vue';
 import { IRightsInfo } from '../../types/roles';
@@ -39,15 +39,15 @@ const handleAddUser = () => {
 
 <template>
   <div>
-    <Button class="bg-blue-400 mb-4" @click="handleAddUser">增加角色</Button>
+    <XButton class="bg-blue-400 mb-4" @click="handleAddUser">增加角色</XButton>
     <el-table :data="tableData" border stripe class="mb-4" v-loading="loading">
       <el-table-column prop="id" label="ID"> </el-table-column>
       <el-table-column prop="roleName" label="角色名"> </el-table-column>
       <el-table-column prop="roleDesc" label="角色描述"> </el-table-column>
       <el-table-column prop="mg_state" label="选项" min-width="200">
         <template #default="scope">
-          <Button class="bg-red-400 mr-4" @click="removeRoles(scope.row.id)">删除</Button>
-          <Button class="bg-blue-400" @click="handleDistributeAuthority(scope.row.children, scope.row.id)">分配权限</Button>
+          <XButton class="bg-red-400 mr-4" @click="removeRoles(scope.row.id)">删除</XButton>
+          <XButton class="bg-blue-400" @click="handleDistributeAuthority(scope.row.children, scope.row.id)">分配权限</XButton>
         </template>
       </el-table-column>
     </el-table>

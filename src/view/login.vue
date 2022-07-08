@@ -23,8 +23,8 @@
           </el-form-item>
         </el-form>
         <div class="flex justify-center">
-          <Button class="bg-sky-400 hover:bg-sky-600 mr-4" @click="submitForm(FormRef, login)">登录</Button>
-          <Button class="bg-gray-400 hover:bg-gray-600" @click="resetForm(FormRef)">重置</Button>
+          <XButton class="bg-sky-400 hover:bg-sky-600 mr-4" @click="submitForm(FormRef, login)">登录</XButton>
+          <XButton class="bg-gray-400 hover:bg-gray-600" @click="resetForm(FormRef)">重置</XButton>
         </div>
       </div>
     </div>
@@ -42,6 +42,7 @@ import { useMenusStore } from '../store/menus';
 import { initDanamicRoutes } from '../router';
 import { getRolesList } from '../http/api';
 import { IUserInfo } from '../types/users';
+import XButton from '../components/XButton.vue';
 
 const router = useRouter();
 
