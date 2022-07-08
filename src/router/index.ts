@@ -1,11 +1,11 @@
-import { createRouter, createWebHistory, Router, RouteRecordRaw } from 'vue-router';
+import { createRouter, createWebHistory, createWebHashHistory, Router, RouteRecordRaw } from 'vue-router';
 import { Component, nextTick } from 'vue';
 import { useMenusStore } from '../store/menus';
 import { routes, routesMap } from './route';
 import { IRightsInfo } from '../types/roles';
 
 const router: Router = createRouter({
-  history: createWebHistory(),
+  history: createWebHashHistory(),
   routes,
 });
 
