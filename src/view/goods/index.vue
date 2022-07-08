@@ -7,12 +7,16 @@ const updateGoodsList = () => {
   updateList(pagenum.value, pagesize.value);
 };
 
+interface IgoodsList {
+  goods: string;
+}
+
 updateGoodsList();
 </script>
 
 <template>
   <div>
-    <el-table :data="tableData!.goods" border stripe class="mb-4" v-loading="loading">
+    <el-table :data="(tableData as IgoodsList)!.goods" border stripe class="mb-4" v-loading="loading">
       <el-table-column prop="goods_id" label="商品ID"> </el-table-column>
       <el-table-column prop="goods_name" label="商品名称"> </el-table-column>
       <el-table-column prop="goods_price" label="商品价格"> </el-table-column>

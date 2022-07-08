@@ -29,7 +29,7 @@
               :index="`${index}-${subIndex}`"
               @click="router.push(`/home/${subItem.path}`)"
             >
-              <i :class="`iconfont icon-shuanglieliebiao text-2xl text-blue-400 mr-2`"></i>
+              <!-- <i :class="`iconfont icon-shuanglieliebiao text-2xl text-blue-400 mr-2`"></i> -->
               {{ subItem.authName }}
             </el-menu-item>
           </el-sub-menu>
@@ -54,9 +54,12 @@ import { useRouter, useRoute } from 'vue-router';
 import { ElMessage } from 'element-plus';
 import { ArrowRight } from '@element-plus/icons-vue';
 import Button from '../components/button.vue';
+// import
 
 const router = useRouter();
+
 const route = useRoute();
+
 interface IMenu {
   authName: string;
   id: number;

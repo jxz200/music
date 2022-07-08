@@ -3,8 +3,8 @@ import { ref } from 'vue';
 import Button from '../../components/button.vue';
 import { getRolesList } from '../../http/roles';
 import { assignRoles } from '../../http/users';
-import { IcurrentUserInfo } from '../../types/users';
-const props = defineProps<{ currentUserInfo: IcurrentUserInfo }>();
+import { IUserList } from '../../types/users';
+const props = defineProps<{ currentUserInfo: IUserList }>();
 const dialogVisible = ref(false);
 const roleId = ref<number>();
 interface IRoles {
@@ -30,7 +30,7 @@ const hideDialogue = () => {
 };
 // 提交表单
 const submit = async () => {
-  await assignRoles(props.currentUserInfo.id, roleId.value);
+  await assignRoles(props.currentUserInfo.id, roleId.value as number);
   emit('updateUserList'); // 更新父组件列表
   hideDialogue();
 };

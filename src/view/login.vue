@@ -1,5 +1,5 @@
 <template>
-  <div class="w-screen h-screen grid place-items-center bg-sky-300">
+  <div class="w-screen h-screen grid place-items-center bg-sky-400">
     <div class="w-2/5 h-72 grid place-items-center bg-white rounded-lg shadow-xl">
       <div class="w-full px-12">
         <div class="flex items-center justify-center relative mb-8">
@@ -40,6 +40,8 @@ import useForm from '../hooks/useForm';
 import { useUserStore } from '../store/user';
 import { useMenusStore } from '../store/menus';
 import { initDanamicRoutes } from '../router';
+import { getRolesList } from '../http/api';
+import { IUserInfo } from '../types/users';
 
 const router = useRouter();
 
@@ -70,20 +72,26 @@ interface ILogin {
   password: string;
 }
 const ruleForm = reactive<ILogin>({
-  username: 'admin',
+  username: 'master',
   password: '123456',
 });
 const login = async () => {
   const { data: result } = await loginRequest(ruleForm); // 发送登录请求
   result.data.token && localStorage.setItem('token', result.data.token); // 存储token到localStorage
 
-  // setUserInfo(result.data); // 获取用户信息并存储
-
-  await updateMenus(); // 获取并存储权限信息
+  await updateMenus(result.data); // 获取并存储权限信息
   initDanamicRoutes(); // 开启动态路由
-  console.log('hahha');
 
   router.push('/home'); // 跳转至主页
-  console.log('hahhdsadsa');
 };
+
+// const updateMenus = async (userInfo: IUserInfo) => {
+//   console.log();
+
+//   const { data: rolesData } = await getRolesList();
+//   console.log(rolesData);
+//   console.log(userInfo);
+//   const rightsList = rolesData.data.find((item: any) => item.id === userInfo.rid).children;
+//   sessionStorage.setItem('rightsList', JSON.stringify(rightsList)); // 存
+// };
 </script>

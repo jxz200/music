@@ -4,10 +4,6 @@
   </div>
 </template>
 
-<script setup lang="ts">
-import { initDanamicRoutes } from './router';
-
-initDanamicRoutes();
-</script>
+<script setup lang="ts"></script>
 
 <style scoped></style>

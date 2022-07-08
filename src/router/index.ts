@@ -9,28 +9,36 @@ const router: Router = createRouter({
   routes,
 });
 
+let hasRoles = true;
 // 导航守卫
 router.beforeEach((to, from, next) => {
   if (to.name === 'login') return next();
   if (!localStorage.getItem('token')) next('/login');
   const { rightsInfo } = useMenusStore();
-  next();
+
+  if (hasRoles) {
+    initDanamicRoutes();
+    hasRoles = false;
+    next({ ...to, replace: true });
+  } else {
+    next();
+  }
 });
 
 // 生成动态路由
 export function initDanamicRoutes() {
-  const { rightsInfo } = useMenusStore();
-  console.log('rightsInfo', rightsInfo);
+  const { rightsInfo: rights } = useMenusStore();
 
-  for (const item of rightsInfo) {
-    for (const subItem of item.children as IRightsInfo[]) {
-      const curRoute = routesMap.get(subItem.path); // 获取用户权限对应的路由规则
-      console.log(curRoute);
-
-      router.addRoute('home', curRoute as RouteRecordRaw); // 向home组件中动态加入路由
+  // const rights = JSON.parse(sessionStorage.getItem('rightsList')!);
+  // const rights = rightsInfo;
+  if (!rights) return;
+  for (const item of rights!) {
+    for (const subItem of item.children!) {
+      const curRoute = routesMap.get(subItem.path);
+      curRoute!.meta = { rights: subItem.children };
+      router.addRoute('home', curRoute!);
     }
   }
-  console.log(routes);
-  console.log(router);
+  console.log(router.getRoutes());
 }
 export default router;

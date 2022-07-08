@@ -5,7 +5,9 @@ import { getUserList, deleteUser, changeUserState } from '../../http/users';
 import addUserDialog from './addUserDialog.vue';
 import assignRolesDialogVue from './assignRolesDialog.vue';
 import { IUserList } from '../../types/users';
-
+import { useRouter, useRoute } from 'vue-router';
+const route = useRoute();
+console.log('route23', route);
 // 更新数据
 const query = ref<string>('');
 const pagenum = ref(1);
@@ -65,8 +67,10 @@ const handleDelete = async (row: any) => {
       </el-table-column>
       <el-table-column prop="mg_state" label="选项" min-width="200">
         <template #default="scope">
-          <Button class="bg-red-400 hover:bg-red-600 mr-4" @click="handleDelete(scope.row)" v-permission>删除</Button>
-          <Button class="bg-blue-400 hover:bg-blue-600" @click="handleAssignRoles(scope.row)">分配角色</Button>
+          <Button class="bg-red-400 hover:bg-red-600 mr-4" @click="handleDelete(scope.row)" v-permission="{ route, permission: '删除用户' }">删除</Button>
+          <Button class="bg-blue-400 hover:bg-blue-600" @click="handleAssignRoles(scope.row)" v-permission="{ route, permission: '分配用户角色' }"
+            >分配角色</Button
+          >
         </template>
       </el-table-column>
     </el-table>
@@ -81,6 +85,6 @@ const handleDelete = async (row: any) => {
       @current-change="updateUserList"
     />
     <addUserDialog ref="addUserDialogRef" @updateUserList="updateUserList"></addUserDialog>
-    <assignRolesDialogVue ref="assignRolesDialogRef" :currentUserInfo="currentUserInfo" @updateUserList="updateUserList"></assignRolesDialogVue>
+    <assignRolesDialogVue ref="assignRolesDialogRef" :currentUserInfo="(currentUserInfo as IUserList)" @updateUserList="updateUserList"></assignRolesDialogVue>
   </div>
 </template>
