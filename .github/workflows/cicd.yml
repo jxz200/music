@@ -1,4 +1,4 @@
-name: 打包应用并上传腾讯云
+name: 打包应用并上传阿里云
 
 on:
     push:
@@ -15,7 +15,7 @@ jobs:
               # 使用action库  actions/checkout获取源码
               uses: actions/checkout@master
 
-            # 安装Node10
+            # 安装Node14
             - name: 安装node.js
               # 使用action库  actions/setup-node安装node
               uses: actions/setup-node@v1
@@ -45,4 +45,4 @@ jobs:
                   # 用户
                   REMOTE_USER: 'root'
                   # 目标地址
-                  TARGET: '/www/wwwroot'
+                  TARGET: '/www/wwwroot/http'
