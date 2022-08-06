@@ -2,6 +2,7 @@
 import { ref } from 'vue';
 import useDialogue from '../../hooks/dialogue';
 import { addRoles } from '../../http/roles';
+import XButton from '../../components/XButton.vue';
 
 const { dialogVisible, showDialogue, hideDialogue } = useDialogue();
 

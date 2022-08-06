@@ -1,6 +1,6 @@
 <template>
-  <div class="w-screen h-screen grid place-items-center bg-sky-400">
-    <div class="w-2/5 h-72 grid place-items-center bg-white rounded-lg shadow-xl">
+  <div class="w-screen h-screen grid place-items-center bg-sky-300">
+    <div class="w-2/5 h-72 grid place-items-center bg-white rounded-lg shadow-2xl">
       <div class="w-full px-12">
         <div class="flex items-center justify-center relative mb-8">
           <svg viewBox="0 0 248 31" class="text-slate-900 dark:text-white w-auto h-9 translate-x-16">

@@ -2,7 +2,7 @@ import axios, { AxiosRequestConfig } from 'axios';
 import { ElMessage } from 'element-plus';
 
 const $http = axios.create({
-  baseURL: 'https://shop-2064130-1312774387.ap-shanghai.run.tcloudbase.com/api/private/v1/',
+  baseURL: 'https://shoping-4g580wyf7b21b684-1308088731.ap-shanghai.app.tcloudbase.com/container-shop/api/private/v1/',
 });
 //  baseURL: 'http://175.27.228.178:3434/api/private/v1/', 别人的
 // https://shoping-4g580wyf7b21b684-1308088731.ap-shanghai.app.tcloudbase.com/container-shop/api/private/v1/ 腾讯云

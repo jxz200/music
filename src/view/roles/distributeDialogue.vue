@@ -3,6 +3,7 @@ import useDialogue from '../../hooks/dialogue';
 import { getRightsList } from '../../http/roles';
 import { IRightsInfo } from '../../types/roles';
 import { distributeAuthority } from '../../http/roles';
+import XButton from '../../components/XButton.vue';
 
 const props = defineProps<{
   roleId: number;
